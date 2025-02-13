@@ -25,7 +25,7 @@ public class MathTest {
 		//The interface in MathOperation remains the same
 		//More readable & concise (directly defining new operations on the fly)
 		//less boilerplate code (no need for separate classes)
-		//Flexibility - easily extend by defining operations on the fly, like the addition of Power below
+		//Flexibility - easily extend by defining operations on the fly, like Power below
 		
 		MathOperation add1 = (a, b) -> a + b;
 		MathOperation subtract1 = (a, b) -> a - b;
@@ -34,6 +34,7 @@ public class MathTest {
 			if (b==0) throw new ArithmeticException("Cannot divide by zero.");
 			return a / b;
 		};
+		MathOperation power = (a, b) -> Math.pow(a, b);
 		
 		
 		System.out.println("\nSame operations using lambda functions: ");
@@ -42,6 +43,7 @@ public class MathTest {
 		System.out.println("Subtraction: " + subtract1.evaluate(20, 4));
 		System.out.println("Multiplication: " + multiply1.evaluate(20, 4));
 		System.out.println("Division: " + divide1.evaluate(20, 4));
+		System.out.println("Exponentiation: " + power.evaluate(4, 2));
 		
 	
 		
